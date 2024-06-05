@@ -1,6 +1,6 @@
 package com.kokak.webstoregpttest.controller;
 
-import com.kokak.webstoregpttest.open_ai.OpenAIService;
+import com.kokak.webstoregpttest.open_ai.OpenAIServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,13 +12,13 @@ import java.util.Map;
 public class ChatController {
 
     @Autowired
-    private OpenAIService openAIService;
+    private OpenAIServiceImpl openAIServiceImpl;
 
     @PostMapping("/chat")
     public String chatWithOpenAI(@RequestBody Map<String, String> request) {
         String userInput = request.get("message");
        // return null;
-        return openAIService.generateProductRelatedResponse(userInput);
+        return openAIServiceImpl.generateProductRelatedResponse(userInput);
     }
 
 }

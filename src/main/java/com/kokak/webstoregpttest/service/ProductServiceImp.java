@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ProductServiceImp {
+public class ProductServiceImp implements ProductService{
 
     private static final Logger logger = LoggerFactory.getLogger(ProductServiceImp.class);
 
